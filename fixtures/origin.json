@@ -1,0 +1,147 @@
+{
+  "identity_fields": [
+    "notice",
+    "slot",
+    "observation"
+  ],
+  "source_records": [
+    {
+      "notice": "T-81",
+      "slot": "requirements",
+      "observation": 1,
+      "filename": "公告附件.pdf",
+      "url": "/files/spec",
+      "etag": "v1",
+      "length": 12
+    },
+    {
+      "notice": "T-81",
+      "slot": "requirements",
+      "observation": 2,
+      "filename": "公告附件.pdf",
+      "url": "/files/spec",
+      "etag": "v2",
+      "length": 12
+    },
+    {
+      "notice": "T-82",
+      "slot": "requirements",
+      "observation": 1,
+      "filename": "公告附件.pdf",
+      "url": "/files/shared",
+      "etag": "v1",
+      "length": 12
+    }
+  ],
+  "portal": {
+    "csrf": "form-2026-b"
+  },
+  "routes": {
+    "/feed": {
+      "body": "<!doctype html><html lang='zh'><meta charset='utf-8'><title>来源目录</title><body>\n<article><h2>来源记录</h2>\n<dl><dt>notice</dt><dd>T-81</dd><dt>slot</dt><dd>requirements</dd><dt>observation</dt><dd>1</dd><dt>filename</dt><dd>公告附件.pdf</dd><dt>url</dt><dd>/files/spec</dd><dt>etag</dt><dd>v1</dd><dt>length</dt><dd>12</dd></dl>\n</article>\n<article><h2>来源记录</h2>\n<dl><dt>notice</dt><dd>T-81</dd><dt>slot</dt><dd>requirements</dd><dt>observation</dt><dd>2</dd><dt>filename</dt><dd>公告附件.pdf</dd><dt>url</dt><dd>/files/spec</dd><dt>etag</dt><dd>v2</dd><dt>length</dt><dd>12</dd></dl>\n</article>\n<article><h2>来源记录</h2>\n<dl><dt>notice</dt><dd>T-82</dd><dt>slot</dt><dd>requirements</dd><dt>observation</dt><dd>1</dd><dt>filename</dt><dd>公告附件.pdf</dd><dt>url</dt><dd>/files/shared</dd><dt>etag</dt><dd>v1</dd><dt>length</dt><dd>12</dd></dl>\n</article>\n<script type=\"application/json\" id=\"source-records\">[{\"notice\": \"T-81\", \"slot\": \"requirements\", \"observation\": 1, \"filename\": \"公告附件.pdf\", \"url\": \"/files/spec\", \"etag\": \"v1\", \"length\": 12}, {\"notice\": \"T-81\", \"slot\": \"requirements\", \"observation\": 2, \"filename\": \"公告附件.pdf\", \"url\": \"/files/spec\", \"etag\": \"v2\", \"length\": 12}, {\"notice\": \"T-82\", \"slot\": \"requirements\", \"observation\": 1, \"filename\": \"公告附件.pdf\", \"url\": \"/files/shared\", \"etag\": \"v1\", \"length\": 12}]</script></body></html>",
+      "content_type": "text/html; charset=utf-8",
+      "headers": {
+        "ETag": "feed-1"
+      }
+    },
+    "/rate-limited": {
+      "status": 429,
+      "headers": {
+        "Retry-After": "2"
+      },
+      "json": {
+        "error": "quota"
+      }
+    },
+    "/unstable": [
+      {
+        "status": 503,
+        "body": "temporarily unavailable"
+      },
+      {
+        "json": {
+          "items": []
+        }
+      }
+    ],
+    "/range": {
+      "body": "0123456789",
+      "range": true
+    },
+    "/range-ignored": {
+      "body": "0123456789"
+    },
+    "/truncated": {
+      "body": "partial",
+      "truncate": true
+    },
+    "/files/spec": [
+      {
+        "body": "version-one!",
+        "headers": {
+          "ETag": "v1"
+        },
+        "content_type": "application/pdf"
+      },
+      {
+        "body": "version-two!",
+        "headers": {
+          "ETag": "v2"
+        },
+        "content_type": "application/pdf"
+      }
+    ],
+    "/files/shared": {
+      "body": "version-one!",
+      "headers": {
+        "ETag": "v1"
+      },
+      "content_type": "application/pdf"
+    },
+    "/observations/1": {
+      "json": {
+        "items": [
+          {
+            "notice": "T-81",
+            "slot": "requirements",
+            "observation": 1,
+            "filename": "公告附件.pdf",
+            "url": "/files/spec",
+            "etag": "v1",
+            "length": 12
+          }
+        ]
+      }
+    },
+    "/observations/2": {
+      "json": {
+        "items": [
+          {
+            "notice": "T-81",
+            "slot": "requirements",
+            "observation": 2,
+            "filename": "公告附件.pdf",
+            "url": "/files/spec",
+            "etag": "v2",
+            "length": 12
+          }
+        ]
+      }
+    },
+    "/observations/3": {
+      "json": {
+        "items": [
+          {
+            "notice": "T-82",
+            "slot": "requirements",
+            "observation": 1,
+            "filename": "公告附件.pdf",
+            "url": "/files/shared",
+            "etag": "v1",
+            "length": 12
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,17 @@
+[
+  {
+    "name": "range_ignored",
+    "situation": "续传请求获得200整份内容",
+    "observable": "不能把整份追加到已有段"
+  },
+  {
+    "name": "etag_changes",
+    "situation": "续传中供方替换同名同长度文件",
+    "observable": "不拼接两个内容版本"
+  },
+  {
+    "name": "shared_content",
+    "situation": "两公告共用内容但仅一槽位替换",
+    "observable": "旧评审引用仍精确可读"
+  }
+]
