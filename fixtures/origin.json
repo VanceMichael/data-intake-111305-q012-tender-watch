@@ -1,36 +1,33 @@
 {
   "identity_fields": [
-    "notice",
-    "slot",
-    "observation"
+    "registry",
+    "repository",
+    "reference"
   ],
   "source_records": [
     {
-      "notice": "T-81",
-      "slot": "requirements",
-      "observation": 1,
-      "filename": "公告附件.pdf",
-      "url": "/files/spec",
-      "etag": "v1",
-      "length": 12
+      "registry": "delivery-local",
+      "repository": "vendor/tool",
+      "reference": "accepted",
+      "descriptor": {
+        "digest": "sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6",
+        "size": 289,
+        "mediaType": "application/vnd.oci.image.index.v1+json"
+      }
     },
     {
-      "notice": "T-81",
-      "slot": "requirements",
-      "observation": 2,
-      "filename": "公告附件.pdf",
-      "url": "/files/spec",
-      "etag": "v2",
-      "length": 12
-    },
-    {
-      "notice": "T-82",
-      "slot": "requirements",
-      "observation": 1,
-      "filename": "公告附件.pdf",
-      "url": "/files/shared",
-      "etag": "v1",
-      "length": 12
+      "registry": "delivery-local",
+      "repository": "vendor/tool",
+      "reference": "sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6",
+      "descriptor": {
+        "digest": "sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d",
+        "size": 394,
+        "mediaType": "application/vnd.oci.image.manifest.v1+json",
+        "platform": {
+          "os": "linux",
+          "architecture": "amd64"
+        }
+      }
     }
   ],
   "portal": {
@@ -38,8 +35,34 @@
   },
   "routes": {
     "/feed": {
-      "body": "<!doctype html><html lang='zh'><meta charset='utf-8'><title>来源目录</title><body>\n<article><h2>来源记录</h2>\n<dl><dt>notice</dt><dd>T-81</dd><dt>slot</dt><dd>requirements</dd><dt>observation</dt><dd>1</dd><dt>filename</dt><dd>公告附件.pdf</dd><dt>url</dt><dd>/files/spec</dd><dt>etag</dt><dd>v1</dd><dt>length</dt><dd>12</dd></dl>\n</article>\n<article><h2>来源记录</h2>\n<dl><dt>notice</dt><dd>T-81</dd><dt>slot</dt><dd>requirements</dd><dt>observation</dt><dd>2</dd><dt>filename</dt><dd>公告附件.pdf</dd><dt>url</dt><dd>/files/spec</dd><dt>etag</dt><dd>v2</dd><dt>length</dt><dd>12</dd></dl>\n</article>\n<article><h2>来源记录</h2>\n<dl><dt>notice</dt><dd>T-82</dd><dt>slot</dt><dd>requirements</dd><dt>observation</dt><dd>1</dd><dt>filename</dt><dd>公告附件.pdf</dd><dt>url</dt><dd>/files/shared</dd><dt>etag</dt><dd>v1</dd><dt>length</dt><dd>12</dd></dl>\n</article>\n<script type=\"application/json\" id=\"source-records\">[{\"notice\": \"T-81\", \"slot\": \"requirements\", \"observation\": 1, \"filename\": \"公告附件.pdf\", \"url\": \"/files/spec\", \"etag\": \"v1\", \"length\": 12}, {\"notice\": \"T-81\", \"slot\": \"requirements\", \"observation\": 2, \"filename\": \"公告附件.pdf\", \"url\": \"/files/spec\", \"etag\": \"v2\", \"length\": 12}, {\"notice\": \"T-82\", \"slot\": \"requirements\", \"observation\": 1, \"filename\": \"公告附件.pdf\", \"url\": \"/files/shared\", \"etag\": \"v1\", \"length\": 12}]</script></body></html>",
-      "content_type": "text/html; charset=utf-8",
+      "json": {
+        "items": [
+          {
+            "registry": "delivery-local",
+            "repository": "vendor/tool",
+            "reference": "accepted",
+            "descriptor": {
+              "digest": "sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6",
+              "size": 289,
+              "mediaType": "application/vnd.oci.image.index.v1+json"
+            }
+          },
+          {
+            "registry": "delivery-local",
+            "repository": "vendor/tool",
+            "reference": "sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6",
+            "descriptor": {
+              "digest": "sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d",
+              "size": 394,
+              "mediaType": "application/vnd.oci.image.manifest.v1+json",
+              "platform": {
+                "os": "linux",
+                "architecture": "amd64"
+              }
+            }
+          }
+        ]
+      },
       "headers": {
         "ETag": "feed-1"
       }
@@ -75,40 +98,55 @@
       "body": "partial",
       "truncate": true
     },
-    "/files/spec": [
-      {
-        "body": "version-one!",
-        "headers": {
-          "ETag": "v1"
-        },
-        "content_type": "application/pdf"
-      },
-      {
-        "body": "version-two!",
-        "headers": {
-          "ETag": "v2"
-        },
-        "content_type": "application/pdf"
+    "/v2/vendor/tool/manifests/accepted": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"digest\":\"sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d\",\"size\":394,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"platform\":{\"os\":\"linux\",\"architecture\":\"amd64\"}}]}",
+      "content_type": "application/vnd.oci.image.index.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"digest\":\"sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d\",\"size\":394,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"platform\":{\"os\":\"linux\",\"architecture\":\"amd64\"}}]}",
+      "content_type": "application/vnd.oci.image.index.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"config\":{\"digest\":\"sha256:9d99a75171aea000c711b34c0e5e3f28d3d537dd99d110eafbfbc2bd8e52c2bf\",\"size\":37,\"mediaType\":\"application/vnd.oci.image.config.v1+json\"},\"layers\":[{\"digest\":\"sha256:c0705df23e6561c1b1de5fe226612b047d7e228c1dd6c0c245850060554f4f3c\",\"size\":43,\"mediaType\":\"application/vnd.oci.image.layer.v1.tar\"}]}",
+      "content_type": "application/vnd.oci.image.manifest.v1+json"
+    },
+    "/v2/vendor/tool/blobs/sha256:9d99a75171aea000c711b34c0e5e3f28d3d537dd99d110eafbfbc2bd8e52c2bf": {
+      "body": "{\"architecture\":\"amd64\",\"os\":\"linux\"}",
+      "content_type": "application/vnd.oci.image.config.v1+json"
+    },
+    "/v2/vendor/tool/blobs/sha256:c0705df23e6561c1b1de5fe226612b047d7e228c1dd6c0c245850060554f4f3c": {
+      "body": "synthetic delivery payload, not executable\n",
+      "content_type": "application/octet-stream"
+    },
+    "/v2/vendor/tool/referrers/sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d": {
+      "status": 404,
+      "json": {
+        "errors": [
+          {
+            "code": "UNSUPPORTED"
+          }
+        ]
       }
-    ],
-    "/files/shared": {
-      "body": "version-one!",
-      "headers": {
-        "ETag": "v1"
-      },
-      "content_type": "application/pdf"
+    },
+    "/v2/vendor/tool/manifests/sha256-f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d": {
+      "json": {
+        "schemaVersion": 2,
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "manifests": []
+      }
     },
     "/observations/1": {
       "json": {
         "items": [
           {
-            "notice": "T-81",
-            "slot": "requirements",
-            "observation": 1,
-            "filename": "公告附件.pdf",
-            "url": "/files/spec",
-            "etag": "v1",
-            "length": 12
+            "registry": "delivery-local",
+            "repository": "vendor/tool",
+            "reference": "accepted",
+            "descriptor": {
+              "digest": "sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6",
+              "size": 289,
+              "mediaType": "application/vnd.oci.image.index.v1+json"
+            }
           }
         ]
       }
@@ -117,28 +155,18 @@
       "json": {
         "items": [
           {
-            "notice": "T-81",
-            "slot": "requirements",
-            "observation": 2,
-            "filename": "公告附件.pdf",
-            "url": "/files/spec",
-            "etag": "v2",
-            "length": 12
-          }
-        ]
-      }
-    },
-    "/observations/3": {
-      "json": {
-        "items": [
-          {
-            "notice": "T-82",
-            "slot": "requirements",
-            "observation": 1,
-            "filename": "公告附件.pdf",
-            "url": "/files/shared",
-            "etag": "v1",
-            "length": 12
+            "registry": "delivery-local",
+            "repository": "vendor/tool",
+            "reference": "sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6",
+            "descriptor": {
+              "digest": "sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d",
+              "size": 394,
+              "mediaType": "application/vnd.oci.image.manifest.v1+json",
+              "platform": {
+                "os": "linux",
+                "architecture": "amd64"
+              }
+            }
           }
         ]
       }

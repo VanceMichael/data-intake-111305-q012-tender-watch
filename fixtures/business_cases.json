@@ -1,17 +1,17 @@
 [
   {
-    "name": "range_ignored",
-    "situation": "续传请求获得200整份内容",
-    "observable": "不能把整份追加到已有段"
+    "name": "tag_moves",
+    "situation": "闭包抓取期间标签变化",
+    "observable": "继续冻结摘要而非追随新标签"
   },
   {
-    "name": "etag_changes",
-    "situation": "续传中供方替换同名同长度文件",
-    "observable": "不拼接两个内容版本"
+    "name": "descriptor_closure",
+    "situation": "index已收到但平台manifest或blob缺失",
+    "observable": "准确说明闭包缺口不虚报交付齐全"
   },
   {
-    "name": "shared_content",
-    "situation": "两公告共用内容但仅一槽位替换",
-    "observable": "旧评审引用仍精确可读"
+    "name": "referrer_subject",
+    "situation": "关联制品subject不对应验收对象",
+    "observable": "拒绝串入其他对象的交付资料"
   }
 ]

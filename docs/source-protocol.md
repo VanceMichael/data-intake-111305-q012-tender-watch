@@ -2,7 +2,7 @@
 
 ## 记录与身份
 
-默认来源入口为 `/feed`，媒体格式为 `html`。来源身份字段是 `notice`、`slot`、`observation`。这些字段表示来源自身声明，不等同于已经解决的业务实体身份。输入顺序是一次接收的观察顺序，并不保证业务修订有序。
+默认来源入口为 `/feed`，媒体格式为 `json`。来源身份字段是 `registry`、`repository`、`reference`。这些字段表示来源自身声明，不等同于已经解决的业务实体身份。输入顺序是一次接收的观察顺序，并不保证业务修订有序。
 
 `/observations/1` 等地址允许逐条读取合成观察，返回 `items` 数组。正文、页内嵌入数据与CSV均保留供方原文，不在协议层推断当前有效值。网页中的 `source-records` 是门户向下载客户端提供的公开数据块；表单还带有隐藏控件，令牌用于本地协议状态检查。
 
@@ -18,8 +18,12 @@
 
 ## 领域样例
 
-- `range_ignored`：续传请求获得200整份内容；业务侧关注不能把整份追加到已有段。
-- `etag_changes`：续传中供方替换同名同长度文件；业务侧关注不拼接两个内容版本。
-- `shared_content`：两公告共用内容但仅一槽位替换；业务侧关注旧评审引用仍精确可读。
+- `tag_moves`：闭包抓取期间标签变化；业务侧关注继续冻结摘要而非追随新标签。
+- `descriptor_closure`：index已收到但平台manifest或blob缺失；业务侧关注准确说明闭包缺口不虚报交付齐全。
+- `referrer_subject`：关联制品subject不对应验收对象；业务侧关注拒绝串入其他对象的交付资料。
 
-另外提供 `/files/spec`、`/files/shared`。响应内容和版本由场景文件逐项声明，便于核对实际收到的来源资料。
+另外提供 `/v2/vendor/tool/manifests/accepted`、`/v2/vendor/tool/manifests/sha256:8990dbed525923654e48c2bffe37d2dabcdc0ce7f159ef8ba50e2c0c93d9d3a6`、`/v2/vendor/tool/manifests/sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d`、`/v2/vendor/tool/blobs/sha256:9d99a75171aea000c711b34c0e5e3f28d3d537dd99d110eafbfbc2bd8e52c2bf`、`/v2/vendor/tool/blobs/sha256:c0705df23e6561c1b1de5fe226612b047d7e228c1dd6c0c245850060554f4f3c`、`/v2/vendor/tool/referrers/sha256:f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d`、`/v2/vendor/tool/manifests/sha256-f0eafcb032ddecd3fef89fe1dc16bbd59789b9a38c46e4e9700f1c4dc5c7b65d`。响应内容和版本由场景文件逐项声明，便于核对实际收到的来源资料。
+
+## 领域接入契约
+
+来源实现OCI Distribution只读端点，媒体类型和描述符沿用OCI标准。示例layer是不可执行合成字节，仅用于内容校验。referrers返回404时表示演练源不支持该API，不等同于空列表；兼容tag索引单独声明。对镜像不执行、不解包、不进行安全攻击或漏洞复现。
