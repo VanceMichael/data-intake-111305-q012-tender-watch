@@ -27,3 +27,18 @@
 ## 领域接入契约
 
 来源实现OCI Distribution只读端点，媒体类型和描述符沿用OCI标准。示例layer是不可执行合成字节，仅用于内容校验。referrers返回404时表示演练源不支持该API，不等同于空列表；兼容tag索引单独声明。对镜像不执行、不解包、不进行安全攻击或漏洞复现。
+
+## 验收演练场景（fixtures/oci/）
+
+场景由 `tools/generate_oci_fixtures.py` 离线生成，所有 digest/size 由实际字节计算，仓库固定为 `vendor/tool`，验收标签固定为 `accepted`。
+
+- `tag_moves.json`：标签首次返回单平台 index，第二次返回多平台 index。验收程序必须冻结首次摘要；`--drift-probe` 记录的 `tag_drift_observed.moved` 为真，但冻结视图与结论不变。
+- `closure_gap.json`：index 声明两个平台，arm64 平台 manifest（及其 config/layer）路由缺失返回 404。报告 `missing` 列出具体描述符，节点原因码为 `http_error_status`，状态为 `incomplete`，不虚报齐全。
+- `referrers_supported.json`：referrers API 返回 200 与两个关联制品（交付说明、签名），subject 均指向被验收根摘要；未被 `--require-artifact-type` 要求的制品标记为 `visible_not_required`。
+- `referrers_empty.json`：referrers API 返回 200 空列表，`referrers_state=supported`，与接口缺失的 404 明确区分。
+- `referrers_fallback.json`：referrers API 返回 404 UNSUPPORTED；仅当本地策略为 `--referrers fallback` 时读取兼容 tag `sha256-<hex>` 索引，`referrers_state=fallback_index`。
+- `referrer_subject_mismatch.json`：关联制品 manifest 的 `subject.digest` 指向其他对象，节点状态为 `rejected`，原因码 `subject_mismatch`，其 blob 不进入闭包。
+
+## 验收持久化模型
+
+原始 HTTP 交换仍写入 `captures`/`bodies`（字节按摘要复用，观察各自留痕）。验收视图另用四张表：`acceptances`（验收单、冻结根摘要、referrers 状态、本地策略）、`acceptance_nodes`（描述符角色、必填性、状态、原因与来源 capture）、`acceptance_edges`（platform/config/layer/referrer 引用关系）、`acceptance_events`（标签冻结、漂移、缺口、拒收等有序事件）。恢复运行只重试冻结描述符的缺口，不重新请求标签路径；已通过（accepted）的验收单恢复时只重放视图，不发起请求。

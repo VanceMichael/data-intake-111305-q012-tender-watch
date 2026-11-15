@@ -18,4 +18,4 @@ packages = ["tender_watch", "tender_watch.fixtures"]
 "tender_watch.fixtures" = "fixtures"
 
 [tool.setuptools.package-data]
-"tender_watch.fixtures" = ["*.json"]
+"tender_watch.fixtures" = ["*.json", "oci/*.json"]

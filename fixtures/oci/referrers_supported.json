@@ -1,0 +1,73 @@
+{
+  "identity_fields": [
+    "registry",
+    "repository",
+    "reference"
+  ],
+  "source_records": [],
+  "portal": {
+    "csrf": "form-2026-b"
+  },
+  "routes": {
+    "/v2/vendor/tool/blobs/sha256:67f41513b140e0c7762175c6b9b43f4ef23b73d936f1968a7687297ff907d928": {
+      "body": "SIGNATURE BLOCK: synthetic, not executable\n",
+      "content_type": "application/octet-stream",
+      "status": 200
+    },
+    "/v2/vendor/tool/blobs/sha256:7466aae64e77976a49c93d8333613086cfeae093a95e13eb8c48ec727762a6d4": {
+      "body": "synthetic arm64 delivery payload, not executable\n",
+      "content_type": "application/octet-stream",
+      "status": 200
+    },
+    "/v2/vendor/tool/blobs/sha256:944f65d7e79698943d6b2d5a0d4217c981967c0dd3ad7f94f8bb39899d1497ad": {
+      "body": "DELIVERY NOTE: synthetic contents, acceptance only\n",
+      "content_type": "application/octet-stream",
+      "status": 200
+    },
+    "/v2/vendor/tool/blobs/sha256:9d99a75171aea000c711b34c0e5e3f28d3d537dd99d110eafbfbc2bd8e52c2bf": {
+      "body": "{\"architecture\":\"amd64\",\"os\":\"linux\"}",
+      "content_type": "application/vnd.oci.image.config.v1+json",
+      "status": 200
+    },
+    "/v2/vendor/tool/blobs/sha256:b39868e3a2d80dff6e7e4180739e5301737354b50ce6db414e985229305970b2": {
+      "body": "{\"architecture\":\"arm64\",\"os\":\"linux\",\"variant\":\"v8\"}",
+      "content_type": "application/vnd.oci.image.config.v1+json",
+      "status": 200
+    },
+    "/v2/vendor/tool/blobs/sha256:b836e777e68647463d54ab44158c6caa7e5e8f528f7a9439e9d240829bc7672a": {
+      "body": "synthetic amd64 delivery payload, not executable\n",
+      "content_type": "application/octet-stream",
+      "status": 200
+    },
+    "/v2/vendor/tool/manifests/accepted": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"digest\":\"sha256:7d77a8be7d96cbda56e317a40b620ae90d680e3336fdcc032afff435c993821b\",\"size\":394,\"platform\":{\"os\":\"linux\",\"architecture\":\"amd64\"}},{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"digest\":\"sha256:7e751b46ee29d2868c570b10c35f19a8e40433e0f119ed388863f5d22429868a\",\"size\":394,\"platform\":{\"os\":\"linux\",\"architecture\":\"arm64\",\"variant\":\"v8\"}}]}",
+      "content_type": "application/vnd.oci.image.index.v1+json",
+      "status": 200
+    },
+    "/v2/vendor/tool/manifests/sha256:65f29703fabcc8c74fc312ded2e52fee742a8f2b690ad1b209c74b1c42b78119": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.artifact.manifest.v1+json\",\"artifactType\":\"application/vnd.example.signature.v1+json\",\"blobs\":[{\"mediaType\":\"application/octet-stream\",\"digest\":\"sha256:67f41513b140e0c7762175c6b9b43f4ef23b73d936f1968a7687297ff907d928\",\"size\":43}],\"subject\":{\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"digest\":\"sha256:f77491b492867d74a2a7cd2a68dc99f1d89296555ccfbcdef6efa6bc703c10bb\",\"size\":506}}",
+      "content_type": "application/vnd.oci.artifact.manifest.v1+json",
+      "status": 200
+    },
+    "/v2/vendor/tool/manifests/sha256:7d77a8be7d96cbda56e317a40b620ae90d680e3336fdcc032afff435c993821b": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"config\":{\"mediaType\":\"application/vnd.oci.image.config.v1+json\",\"digest\":\"sha256:9d99a75171aea000c711b34c0e5e3f28d3d537dd99d110eafbfbc2bd8e52c2bf\",\"size\":37},\"layers\":[{\"mediaType\":\"application/vnd.oci.image.layer.v1.tar\",\"digest\":\"sha256:b836e777e68647463d54ab44158c6caa7e5e8f528f7a9439e9d240829bc7672a\",\"size\":49}]}",
+      "content_type": "application/vnd.oci.image.manifest.v1+json",
+      "status": 200
+    },
+    "/v2/vendor/tool/manifests/sha256:7e751b46ee29d2868c570b10c35f19a8e40433e0f119ed388863f5d22429868a": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"config\":{\"mediaType\":\"application/vnd.oci.image.config.v1+json\",\"digest\":\"sha256:b39868e3a2d80dff6e7e4180739e5301737354b50ce6db414e985229305970b2\",\"size\":52},\"layers\":[{\"mediaType\":\"application/vnd.oci.image.layer.v1.tar\",\"digest\":\"sha256:7466aae64e77976a49c93d8333613086cfeae093a95e13eb8c48ec727762a6d4\",\"size\":49}]}",
+      "content_type": "application/vnd.oci.image.manifest.v1+json",
+      "status": 200
+    },
+    "/v2/vendor/tool/manifests/sha256:c290f7c19e55d1add4a4788800e5c12fe6a4c0743e4b4ef3d4af651276b50db2": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.artifact.manifest.v1+json\",\"artifactType\":\"application/vnd.example.delivery-note.v1+json\",\"blobs\":[{\"mediaType\":\"application/octet-stream\",\"digest\":\"sha256:944f65d7e79698943d6b2d5a0d4217c981967c0dd3ad7f94f8bb39899d1497ad\",\"size\":51}],\"subject\":{\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"digest\":\"sha256:f77491b492867d74a2a7cd2a68dc99f1d89296555ccfbcdef6efa6bc703c10bb\",\"size\":506}}",
+      "content_type": "application/vnd.oci.artifact.manifest.v1+json",
+      "status": 200
+    },
+    "/v2/vendor/tool/referrers/sha256:f77491b492867d74a2a7cd2a68dc99f1d89296555ccfbcdef6efa6bc703c10bb": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"mediaType\":\"application/vnd.oci.artifact.manifest.v1+json\",\"digest\":\"sha256:c290f7c19e55d1add4a4788800e5c12fe6a4c0743e4b4ef3d4af651276b50db2\",\"size\":446,\"artifactType\":\"application/vnd.example.delivery-note.v1+json\"},{\"mediaType\":\"application/vnd.oci.artifact.manifest.v1+json\",\"digest\":\"sha256:65f29703fabcc8c74fc312ded2e52fee742a8f2b690ad1b209c74b1c42b78119\",\"size\":442,\"artifactType\":\"application/vnd.example.signature.v1+json\"}]}",
+      "content_type": "application/vnd.oci.image.index.v1+json",
+      "status": 200
+    }
+  }
+}
