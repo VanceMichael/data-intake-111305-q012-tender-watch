@@ -70,6 +70,9 @@ class Handler(BaseHTTPRequestHandler):
         if "json" in selected:
             body = json.dumps(selected["json"], ensure_ascii=False).encode()
             content_type = "application/json"
+        elif isinstance(selected.get("body"), bytes):
+            body = selected["body"]
+            content_type = selected.get("content_type", "application/octet-stream")
         else:
             body = selected.get("body", "").encode("utf-8")
             content_type = selected.get("content_type", "text/plain; charset=utf-8")

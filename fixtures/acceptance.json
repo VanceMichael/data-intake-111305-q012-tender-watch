@@ -1,0 +1,102 @@
+{
+  "identity_fields": [
+    "registry",
+    "repository",
+    "reference"
+  ],
+  "portal": {
+    "csrf": "form-2026-b"
+  },
+  "source_records": [
+    {
+      "registry": "delivery-local",
+      "repository": "vendor/tool",
+      "reference": "accepted",
+      "descriptor": {
+        "mediaType": "application/vnd.oci.image.index.v1+json",
+        "size": 491,
+        "digest": "sha256:911933f711e05707b2c86e2090f11b808cef96e055d79cc21a5cf0c5fe897c50"
+      }
+    }
+  ],
+  "routes": {
+    "/v2/vendor/tool/blobs/sha256:2fb243495a657f452910eb90dbb0bd0f6da55ec89abe8424ae73e4e974905914": {
+      "body": "{\"architecture\":\"amd64\",\"os\":\"linux\",\"synthetic\":true}",
+      "content_type": "application/vnd.oci.image.config.v1+json",
+      "declared_media_type": "application/vnd.oci.image.config.v1+json"
+    },
+    "/v2/vendor/tool/blobs/sha256:f92bb4f3e40c4a6228cd9f41cc7cfeb1b2c9a415e900e3878b025e8fb8d5d54a": {
+      "body": "{\"architecture\":\"arm64\",\"os\":\"linux\",\"synthetic\":true}",
+      "content_type": "application/vnd.oci.image.config.v1+json",
+      "declared_media_type": "application/vnd.oci.image.config.v1+json"
+    },
+    "/v2/vendor/tool/blobs/sha256:c0705df23e6561c1b1de5fe226612b047d7e228c1dd6c0c245850060554f4f3c": {
+      "body": "synthetic delivery payload, not executable\n",
+      "content_type": "application/octet-stream",
+      "declared_media_type": "application/vnd.oci.image.layer.v1.tar"
+    },
+    "/v2/vendor/tool/blobs/sha256:544d8df14eab2da97c3059986007f5303ffb86864c5bc52e0c73a51d34f287c2": {
+      "body": "arm64 synthetic delivery payload, not executable\n",
+      "content_type": "application/octet-stream",
+      "declared_media_type": "application/vnd.oci.image.layer.v1.tar"
+    },
+    "/v2/vendor/tool/blobs/sha256:7398240896b789eb6620ba06e58a12b9d2893dc919258227ae6ad7f264fce681": {
+      "body": "{\"note\":\"synthetic delivery note config\"}",
+      "content_type": "application/vnd.oci.image.config.v1+json",
+      "declared_media_type": "application/vnd.oci.image.config.v1+json"
+    },
+    "/v2/vendor/tool/blobs/sha256:e0d964b1db284655c71269ab6e5c3e6aaa148afb44099402bd89a939286aaa0b": {
+      "body": "Delivery note: synthetic, unsigned, not executable.\n",
+      "content_type": "application/vnd.oci.artifact.note.v1+json",
+      "declared_media_type": "application/vnd.oci.artifact.note.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:aeb2c41f79977050d988c8af01a276bf78fe861d69b59ce6e6de9d96916606fb": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"config\":{\"mediaType\":\"application/vnd.oci.image.config.v1+json\",\"size\":54,\"digest\":\"sha256:2fb243495a657f452910eb90dbb0bd0f6da55ec89abe8424ae73e4e974905914\"},\"layers\":[{\"mediaType\":\"application/vnd.oci.image.layer.v1.tar\",\"size\":43,\"digest\":\"sha256:c0705df23e6561c1b1de5fe226612b047d7e228c1dd6c0c245850060554f4f3c\"}]}",
+      "content_type": "application/vnd.oci.image.manifest.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:7781d3fb2e02ff6f1f448d9c477b06a4f74899a5fe8240535caf3666df582d53": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"config\":{\"mediaType\":\"application/vnd.oci.image.config.v1+json\",\"size\":54,\"digest\":\"sha256:f92bb4f3e40c4a6228cd9f41cc7cfeb1b2c9a415e900e3878b025e8fb8d5d54a\"},\"layers\":[{\"mediaType\":\"application/vnd.oci.image.layer.v1.tar\",\"size\":43,\"digest\":\"sha256:c0705df23e6561c1b1de5fe226612b047d7e228c1dd6c0c245850060554f4f3c\"},{\"mediaType\":\"application/vnd.oci.image.layer.v1.tar\",\"size\":49,\"digest\":\"sha256:544d8df14eab2da97c3059986007f5303ffb86864c5bc52e0c73a51d34f287c2\"}]}",
+      "content_type": "application/vnd.oci.image.manifest.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:8951b771132ae065ca62c54fccc03d3ccfd34c80fe612adc8d5263b7c739eafc": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"config\":{\"mediaType\":\"application/vnd.oci.image.config.v1+json\",\"size\":54,\"digest\":\"sha256:2fb243495a657f452910eb90dbb0bd0f6da55ec89abe8424ae73e4e974905914\"},\"layers\":[{\"mediaType\":\"application/vnd.oci.image.layer.v1.tar\",\"size\":49,\"digest\":\"sha256:544d8df14eab2da97c3059986007f5303ffb86864c5bc52e0c73a51d34f287c2\"}],\"annotations\":{\"revision\":\"moved\"}}",
+      "content_type": "application/vnd.oci.image.manifest.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:d2a1b98a0f4b6c7cf4173da0604d906b606d473b59239ad7caefb7e8c0f50d56": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"config\":{\"mediaType\":\"application/vnd.oci.image.config.v1+json\",\"size\":41,\"digest\":\"sha256:7398240896b789eb6620ba06e58a12b9d2893dc919258227ae6ad7f264fce681\"},\"layers\":[{\"mediaType\":\"application/vnd.oci.artifact.note.v1+json\",\"size\":52,\"digest\":\"sha256:e0d964b1db284655c71269ab6e5c3e6aaa148afb44099402bd89a939286aaa0b\"}],\"subject\":{\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"size\":491,\"digest\":\"sha256:911933f711e05707b2c86e2090f11b808cef96e055d79cc21a5cf0c5fe897c50\"},\"artifactType\":\"application/vnd.example.delivery-note.v1+json\"}",
+      "content_type": "application/vnd.oci.image.manifest.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:911933f711e05707b2c86e2090f11b808cef96e055d79cc21a5cf0c5fe897c50": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":394,\"digest\":\"sha256:aeb2c41f79977050d988c8af01a276bf78fe861d69b59ce6e6de9d96916606fb\",\"platform\":{\"os\":\"linux\",\"architecture\":\"amd64\"}},{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":542,\"digest\":\"sha256:7781d3fb2e02ff6f1f448d9c477b06a4f74899a5fe8240535caf3666df582d53\",\"platform\":{\"os\":\"linux\",\"architecture\":\"arm64\"}}]}",
+      "content_type": "application/vnd.oci.image.index.v1+json"
+    },
+    "/v2/vendor/tool/manifests/sha256:13b041b26670f0746237e5f0fdca273b507b5aec5572447e915f30603cb0d388": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":429,\"digest\":\"sha256:8951b771132ae065ca62c54fccc03d3ccfd34c80fe612adc8d5263b7c739eafc\",\"platform\":{\"os\":\"linux\",\"architecture\":\"amd64\"}},{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":542,\"digest\":\"sha256:7781d3fb2e02ff6f1f448d9c477b06a4f74899a5fe8240535caf3666df582d53\",\"platform\":{\"os\":\"linux\",\"architecture\":\"arm64\"}}]}",
+      "content_type": "application/vnd.oci.image.index.v1+json"
+    },
+    "/v2/vendor/tool/manifests/accepted": [
+      {
+        "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":394,\"digest\":\"sha256:aeb2c41f79977050d988c8af01a276bf78fe861d69b59ce6e6de9d96916606fb\",\"platform\":{\"os\":\"linux\",\"architecture\":\"amd64\"}},{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":542,\"digest\":\"sha256:7781d3fb2e02ff6f1f448d9c477b06a4f74899a5fe8240535caf3666df582d53\",\"platform\":{\"os\":\"linux\",\"architecture\":\"arm64\"}}]}",
+        "content_type": "application/vnd.oci.image.index.v1+json"
+      },
+      {
+        "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":429,\"digest\":\"sha256:8951b771132ae065ca62c54fccc03d3ccfd34c80fe612adc8d5263b7c739eafc\",\"platform\":{\"os\":\"linux\",\"architecture\":\"amd64\"}},{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":542,\"digest\":\"sha256:7781d3fb2e02ff6f1f448d9c477b06a4f74899a5fe8240535caf3666df582d53\",\"platform\":{\"os\":\"linux\",\"architecture\":\"arm64\"}}]}",
+        "content_type": "application/vnd.oci.image.index.v1+json"
+      }
+    ],
+    "/v2/vendor/tool/referrers/sha256:911933f711e05707b2c86e2090f11b808cef96e055d79cc21a5cf0c5fe897c50": {
+      "status": 404,
+      "json": {
+        "errors": [
+          {
+            "code": "UNSUPPORTED"
+          }
+        ]
+      }
+    },
+    "/v2/vendor/tool/manifests/sha256-911933f711e05707b2c86e2090f11b808cef96e055d79cc21a5cf0c5fe897c50": {
+      "body": "{\"schemaVersion\":2,\"mediaType\":\"application/vnd.oci.image.index.v1+json\",\"manifests\":[{\"mediaType\":\"application/vnd.oci.image.manifest.v1+json\",\"size\":620,\"digest\":\"sha256:d2a1b98a0f4b6c7cf4173da0604d906b606d473b59239ad7caefb7e8c0f50d56\",\"artifactType\":\"application/vnd.example.delivery-note.v1+json\"}]}",
+      "content_type": "application/vnd.oci.image.index.v1+json"
+    }
+  }
+}
